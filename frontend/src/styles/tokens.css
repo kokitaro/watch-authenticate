@@ -1,0 +1,67 @@
+/* Theme the RainbowKit connect button + modal to the Horologe palette
+   (ivory / bronze / onyx / brass) so nothing breaks the existing look. */
+[data-rk] {
+  --rk-colors-accentColor: var(--brass);
+  --rk-colors-accentColorForeground: var(--onyx);
+
+  --rk-colors-modalBackground: var(--onyx-soft);
+  --rk-colors-modalText: var(--ivory);
+  --rk-colors-modalTextSecondary: rgba(243, 233, 210, 0.6);
+  --rk-colors-modalTextDim: rgba(243, 233, 210, 0.45);
+  --rk-colors-modalBorder: var(--line);
+
+  --rk-colors-profileForeground: var(--onyx-soft);
+  --rk-colors-profileAction: rgba(243, 233, 210, 0.06);
+  --rk-colors-profileActionHover: rgba(212, 168, 67, 0.14);
+
+  --rk-colors-connectButtonBackground: var(--onyx-soft);
+  --rk-colors-connectButtonBackgroundError: #8b3a2b;
+  --rk-colors-connectButtonInnerBackground: rgba(243, 233, 210, 0.05);
+  --rk-colors-connectButtonText: var(--brass-bright);
+  --rk-colors-connectButtonTextError: var(--ivory);
+
+  --rk-colors-actionButtonBorder: var(--line);
+  --rk-colors-actionButtonBorderMobile: var(--line);
+  --rk-colors-actionButtonSecondaryBackground: rgba(243, 233, 210, 0.06);
+
+  --rk-colors-closeButton: rgba(243, 233, 210, 0.7);
+  --rk-colors-closeButtonBackground: rgba(243, 233, 210, 0.06);
+
+  --rk-colors-generalBorder: var(--line);
+  --rk-colors-menuItemBackground: rgba(212, 168, 67, 0.1);
+  --rk-colors-selectedOptionBorder: var(--brass);
+
+  --rk-fonts-body: var(--mono);
+
+  --rk-radii-modal: 6px;
+  --rk-radii-modalMobile: 6px;
+  --rk-radii-menuButton: 3px;
+  --rk-radii-actionButton: 3px;
+  --rk-radii-connectButton: 2px;
+
+  --rk-shadows-connectButton: none;
+  --rk-shadows-dialog: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* Keep the connect button typographically in step with our controls. */
+.rk-connect-slot [data-rk] button,
+.rk-connect-slot button {
+  font-family: var(--mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.74rem;
+}
+
+/* ── Connected state ──────────────────────────────────────────────
+   RainbowKit's default account pill ships bright text that clashes with
+   the bronze/brass palette. Force the address/label text to brass. The
+   avatar itself is replaced by the custom BrassAvatar component passed
+   to RainbowKitProvider (see main.tsx). */
+.rk-connect-slot [data-rk] button {
+  color: var(--brass-bright) !important;
+}
+.rk-connect-slot [data-rk] button div,
+.rk-connect-slot [data-rk] button span {
+  color: var(--brass-bright) !important;
+}
+

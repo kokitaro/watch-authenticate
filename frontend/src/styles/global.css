@@ -1,0 +1,155 @@
+/* Horologe — "the chronology of objects"
+   Palette: ivory base, bronze, onyx, brass-warm highlights.
+   Display: Fraunces. Codes: IBM Plex Mono. */
+:root {
+  --ivory: #f3e9d2;
+  --ivory-deep: #e7d9ba;
+  --bronze: #8b5a2b;
+  --bronze-deep: #6d4520;
+  --onyx: #1a1410;
+  --onyx-soft: #241c15;
+  --brass: #d4a843;
+  --brass-bright: #e8c466;
+  --line: rgba(26, 20, 16, 0.16);
+  --paper-shadow: rgba(26, 20, 16, 0.18);
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { margin: 0; padding: 0; min-height: 100%; }
+
+body {
+  background: var(--onyx);
+  color: var(--ivory);
+  font-family: var(--serif);
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* The whole app is a long vertical scroll — a spine, not a grid. */
+#root {
+  background:
+    radial-gradient(120% 60% at 50% -8%, rgba(212, 168, 67, 0.10), transparent 60%),
+    linear-gradient(180deg, var(--onyx) 0%, #120d09 60%, var(--onyx) 100%);
+}
+
+a { color: var(--brass); text-decoration: none; }
+a:hover { color: var(--brass-bright); }
+
+code, .mono { font-family: var(--mono); }
+
+::selection { background: var(--brass); color: var(--onyx); }
+
+button {
+  font-family: var(--mono);
+  cursor: pointer;
+  border: 1px solid var(--brass);
+  background: transparent;
+  color: var(--brass-bright);
+  padding: 0.62rem 1.05rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: background 160ms ease, color 160ms ease, transform 120ms ease;
+}
+button:hover:not(:disabled) { background: var(--brass); color: var(--onyx); }
+button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+input, select, textarea {
+  font-family: var(--mono);
+  background: rgba(243, 233, 210, 0.04);
+  border: 1px solid var(--line);
+  border-bottom: 1px solid var(--bronze);
+  color: var(--ivory);
+  padding: 0.6rem 0.7rem;
+  font-size: 0.82rem;
+  width: 100%;
+  border-radius: 2px;
+  outline: none;
+}
+input:focus, select:focus, textarea:focus { border-bottom-color: var(--brass); }
+select option { background: var(--onyx); color: var(--ivory); }
+
+.shell { max-width: 1180px; margin: 0 auto; padding: 0 clamp(1.1rem, 4vw, 3rem); }
+
+.eyebrow {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-size: 0.66rem;
+  color: var(--brass);
+  margin: 0 0 0.8rem;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(1.7rem, 4.4vw, 3rem);
+  line-height: 1.04;
+  margin: 0 0 1.4rem;
+  letter-spacing: -0.01em;
+}
+.section-title em { font-style: italic; color: var(--brass-bright); }
+
+.lede {
+  font-size: clamp(1rem, 1.6vw, 1.18rem);
+  line-height: 1.6;
+  max-width: 60ch;
+  color: rgba(243, 233, 210, 0.82);
+  font-weight: 300;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--bronze), transparent);
+  border: 0;
+  margin: clamp(3rem, 8vw, 6rem) 0;
+}
+
+.pill {
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.6rem;
+  border: 1px solid var(--bronze);
+  border-radius: 999px;
+  color: var(--brass-bright);
+  white-space: nowrap;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.6rem;
+  transform: translateX(-50%);
+  background: var(--onyx-soft);
+  border: 1px solid var(--brass);
+  color: var(--ivory);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  padding: 0.75rem 1.1rem;
+  border-radius: 4px;
+  max-width: min(90vw, 640px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  z-index: 50;
+  word-break: break-word;
+}
+
+.err-pre {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: #e8a06a;
+  background: rgba(139, 90, 43, 0.12);
+  border-left: 2px solid var(--bronze);
+  padding: 0.6rem 0.8rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0.6rem 0 0;
+}
+
+.muted { color: rgba(243, 233, 210, 0.5); }

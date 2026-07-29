@@ -1,0 +1,67 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem clamp(1.1rem, 4vw, 3rem);
+  background: rgba(18, 13, 9, 0.78);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--ivory);
+}
+.brand:hover { color: var(--ivory); }
+
+.mark {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--brass);
+  box-shadow: 0 0 10px var(--brass);
+}
+
+.word {
+  font-family: var(--mono);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  font-size: 0.82rem;
+  color: var(--brass-bright);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(243, 233, 210, 0.5);
+}
+.count { color: rgba(243, 233, 210, 0.4); }
+
+.cta {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brass-bright);
+  border: 1px solid var(--brass);
+  padding: 0.5rem 0.95rem;
+  border-radius: 2px;
+  transition: background 160ms ease, color 160ms ease;
+  white-space: nowrap;
+}
+.cta:hover { background: var(--brass); color: var(--onyx); }
+
+@media (max-width: 620px) {
+  .live { display: none; }
+}

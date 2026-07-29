@@ -1,0 +1,101 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+}
+@media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+
+.card {
+  background: linear-gradient(160deg, rgba(243, 233, 210, 0.05), rgba(26, 20, 16, 0.2));
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--bronze);
+  border-radius: 6px;
+  padding: clamp(1.1rem, 3vw, 1.5rem);
+}
+.cardWide { grid-column: 1 / -1; }
+
+.cardTitle {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--brass-bright);
+  margin: 0 0 0.3rem;
+}
+
+.cardNote {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: rgba(243, 233, 210, 0.55);
+  margin: 0 0 1rem;
+  line-height: 1.5;
+}
+
+.row {
+  display: flex;
+  gap: 0.6rem;
+  align-items: stretch;
+}
+.row input { flex: 1; }
+.row button { white-space: nowrap; flex-shrink: 0; }
+
+.result {
+  margin-top: 1rem;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--ivory);
+  line-height: 1.6;
+}
+.result b { color: var(--brass-bright); }
+.resultMeta { color: rgba(243, 233, 210, 0.6); font-size: 0.68rem; margin-top: 0.2rem; }
+
+.payload {
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: rgba(26, 20, 16, 0.5);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 0.55rem;
+  margin-top: 0.6rem;
+  color: rgba(243, 233, 210, 0.72);
+  max-height: 200px;
+  overflow: auto;
+}
+
+.recentList {
+  margin-top: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.recentRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+.recentRow:last-child { border-bottom: 0; }
+.recentRow:hover { background: rgba(212, 168, 67, 0.05); }
+.recSeq { color: rgba(243, 233, 210, 0.4); flex-shrink: 0; }
+.recKind { color: var(--brass-bright); min-width: 8.5rem; flex-shrink: 0; }
+.recPiece { color: var(--ivory); flex: 1; word-break: break-all; }
+.recActor { color: rgba(243, 233, 210, 0.5); margin-left: auto; flex-shrink: 0; }
+
+.err {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: #e8a06a;
+  margin: 0.7rem 0 0;
+  word-break: break-word;
+}
+
+@media (max-width: 620px) {
+  .recKind { min-width: auto; }
+  .recentRow { flex-wrap: wrap; gap: 0.3rem 0.7rem; }
+  .recActor { margin-left: 0; }
+}

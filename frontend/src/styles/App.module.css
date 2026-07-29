@@ -1,0 +1,177 @@
+.section { padding: clamp(2.4rem, 6vw, 4.4rem) 0 0; }
+
+.consoleGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem;
+  margin-top: 1.6rem;
+}
+@media (max-width: 880px) { .consoleGrid { grid-template-columns: 1fr; } }
+
+.walletRow { margin-top: 1.6rem; }
+
+.connectPanel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  background: linear-gradient(160deg, rgba(243, 233, 210, 0.05), rgba(26, 20, 16, 0.2));
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--bronze);
+  border-radius: 6px;
+  padding: clamp(1.1rem, 3vw, 1.6rem);
+}
+.connectTitle {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.4rem;
+  margin: 0 0 0.3rem;
+  color: var(--brass-bright);
+}
+.connectNote {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: rgba(243, 233, 210, 0.55);
+  margin: 0;
+  max-width: 52ch;
+  line-height: 1.5;
+}
+
+.registry {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+}
+
+.regItem {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: rgba(243, 233, 210, 0.04);
+  color: var(--ivory);
+  cursor: pointer;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.regItem:hover { border-color: var(--brass); color: var(--brass-bright); background: rgba(212, 168, 67, 0.06); }
+.regItemActive { border-color: var(--brass); background: var(--brass); color: var(--onyx); }
+.regBrand { color: var(--bronze); }
+.regItemActive .regBrand { color: var(--onyx); }
+
+.emptyReg {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: rgba(243, 233, 210, 0.5);
+  margin-top: 1rem;
+}
+
+.selectedWrap { margin-top: 1.8rem; }
+
+.timelineHead {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  margin: 2rem 0 0.4rem;
+}
+.timelineHead h3 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.footer {
+  margin-top: clamp(3rem, 8vw, 6rem);
+  padding: 2.4rem 0 3rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: rgba(243, 233, 210, 0.55);
+  line-height: 1.8;
+}
+.footer code { color: var(--brass-bright); }
+
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.7rem clamp(1.1rem, 4vw, 3rem);
+  background: rgba(18, 13, 9, 0.82);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.mastBrand { color: var(--brass-bright); font-weight: 600; }
+.mastDot { width: 7px; height: 7px; border-radius: 50%; background: var(--brass); box-shadow: 0 0 8px var(--brass); }
+.mastRight { margin-left: auto; color: rgba(243, 233, 210, 0.5); }
+
+/* ── Writing-desk tabs (Workspace) ──────────────────────────────── */
+.deskTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.6rem;
+}
+
+.deskTab {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--line);
+  background: rgba(243, 233, 210, 0.04);
+  color: rgba(243, 233, 210, 0.7);
+  border-radius: 2px;
+  transition: border-color 160ms ease, color 160ms ease, background 160ms ease;
+}
+.deskTab:hover:not(:disabled) {
+  border-color: var(--bronze);
+  color: var(--brass-bright);
+  background: rgba(212, 168, 67, 0.05);
+}
+.deskTabActive {
+  border-color: var(--brass);
+  background: var(--brass);
+  color: var(--onyx);
+}
+.deskTabActive:hover:not(:disabled) { background: var(--brass); color: var(--onyx); }
+
+.deskHint {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: rgba(243, 233, 210, 0.5);
+  margin: 1rem 0 0;
+}
+
+.deskBody { margin-top: 1.2rem; max-width: 720px; }
+
+.latestLine {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: rgba(243, 233, 210, 0.65);
+  margin: 1rem 0 0;
+}
+.latestLine b { color: var(--brass-bright); }
+
+.netBanner {
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--onyx);
+  background: var(--brass);
+  padding: 0.4rem;
+}

@@ -1,0 +1,122 @@
+.spine {
+  position: relative;
+  margin: 1.5rem 0 0;
+  padding-left: 2.4rem;
+}
+
+/* the vertical line of the spine */
+.spine::before {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--brass), var(--bronze) 60%, transparent);
+}
+
+.node {
+  position: relative;
+  margin-bottom: 1.1rem;
+}
+
+.bead {
+  position: absolute;
+  left: -2.4rem;
+  top: 0.55rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--onyx);
+  border: 2px solid var(--brass);
+  display: grid;
+  place-items: center;
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  color: var(--brass-bright);
+  z-index: 1;
+}
+.beadMint { border-color: var(--brass-bright); box-shadow: 0 0 12px rgba(212, 168, 67, 0.6); }
+
+.entry {
+  width: 100%;
+  text-align: left;
+  background: linear-gradient(150deg, rgba(243, 233, 210, 0.05), rgba(139, 90, 43, 0.04));
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--bronze);
+  border-radius: 5px;
+  padding: 0.85rem 1rem;
+  transition: border-color 160ms ease, background 160ms ease;
+}
+.entry:hover { border-left-color: var(--brass); background: rgba(212, 168, 67, 0.06); }
+
+.head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.kind {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--brass-bright);
+}
+
+.seq {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  color: rgba(243, 233, 210, 0.5);
+}
+
+.actor {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  color: rgba(243, 233, 210, 0.6);
+  margin-left: auto;
+}
+
+.detail {
+  overflow: hidden;
+  margin-top: 0.6rem;
+}
+
+.kv {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  line-height: 1.7;
+  color: rgba(243, 233, 210, 0.78);
+}
+.kv b { color: var(--brass); font-weight: 600; }
+
+.hashLink {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--bronze);
+  word-break: break-all;
+  display: block;
+  margin-top: 0.3rem;
+}
+
+.payload {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: rgba(26, 20, 16, 0.5);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 0.6rem;
+  margin-top: 0.5rem;
+  color: rgba(243, 233, 210, 0.72);
+  max-height: 260px;
+  overflow: auto;
+}
+
+.empty {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: rgba(243, 233, 210, 0.5);
+  padding: 1rem 0;
+}
